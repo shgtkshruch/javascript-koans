@@ -1,39 +1,38 @@
 var _; //globals
 
-/* This section uses a functional extension known as Underscore.js - http://documentcloud.github.com/underscore/
-     "Underscore is a utility-belt library for JavaScript that provides a lot of the functional programming support
-      that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects.
-      It's the tie to go along with jQuery's tux."
+/* このセクションではUnderscore.js(http://documentcloud.github.com/underscore/)を使って関数言語的なアプローチをします。
+ 「UndersocreはJavaScript用のユーティリティベルトライブラリで、Prototype.js(またはRuby)のような沢山の関数型プログラミングサポートを提供しますが、JavaScriptの組み込みオブジェクトは一切拡張していません。jQuery製のタキシードと、Backbone.js製のサスペンダーと一緒に着るネクタイであります。」
  */
-describe("About Higher Order Functions", function () {
 
-  it("should use filter to return array items that meet a criteria", function () {
+describe("高階関数", function () {
+
+  it("'filter'を使って条件にある配列のアイテムのみを返すこと", function () {
     var numbers = [1,2,3];
     var odd = _(numbers).filter(function (x) { return x % 2 !== 0 });
-    
+
     expect(odd).toEqual(FILL_ME_IN);
     expect(odd.length).toBe(FILL_ME_IN);
     expect(numbers.length).toBe(FILL_ME_IN);
   });
-    
-  it("should use 'map' to transform each element", function () {
+
+  it("'map'を使ってそれぞれの要素を変更する方法", function () {
     var numbers = [1, 2, 3];
     var numbersPlus1 = _(numbers).map(function(x) { return x + 1 });
-    
+
     expect(numbersPlus1).toEqual(FILL_ME_IN);
     expect(numbers).toEqual(FILL_ME_IN);
   });
-    
-  it("should use 'reduce' to update the same result on each iteration", function () {
+
+  it("'reduce'を使ってイテレーション毎に同じ結果をアップデートする方法", function () {
     var numbers = [1, 2, 3];
     var reduction = _(numbers).reduce(
             function(/* result from last call */ memo, /* current */ x) { return memo + x }, /* initial */ 0);
-    
+
     expect(reduction).toBe(FILL_ME_IN);
     expect(numbers).toEqual(FILL_ME_IN);
   });
-    
-  it("should use 'forEach' for simple iteration", function () {
+
+  it("'forEach'を使ったシンプルなイテレーションの方法", function () {
     var numbers = [1,2,3];
     var msg = "";
     var isEven = function (item) {
@@ -41,12 +40,12 @@ describe("About Higher Order Functions", function () {
     };
 
     _(numbers).forEach(isEven);
-    
+
     expect(msg).toEqual(FILL_ME_IN);
     expect(numbers).toEqual(FILL_ME_IN);
   });
-    
-  it("should use 'all' to test whether all items pass condition", function () {
+
+  it("'all'を使ってすべての条件でパスするかをテストする方法", function () {
     var onlyEven = [2,4,6];
     var mixedBag = [2,4,5,6];
 
@@ -55,8 +54,8 @@ describe("About Higher Order Functions", function () {
     expect(_(onlyEven).all(isEven)).toBe(FILL_ME_IN);
     expect(_(mixedBag).all(isEven)).toBe(FILL_ME_IN);
   });
-    
-  it("should use 'any' to test if any items passes condition" , function () {
+
+  it("'any'を使ってアイテムのどれかが条件に合致するかをテストする方法" , function () {
     var onlyEven = [2,4,6];
     var mixedBag = [2,4,5,6];
 
@@ -66,17 +65,17 @@ describe("About Higher Order Functions", function () {
     expect(_(mixedBag).any(isEven)).toBe(FILL_ME_IN);
   });
 
-  it("should use range to generate an array", function() {
+  it("'range'を使って配列を生成する方法", function() {
       expect(_.range(3)).toEqual(FILL_ME_IN);
       expect(_.range(1, 4)).toEqual(FILL_ME_IN);
       expect(_.range(0, -4, -1)).toEqual(FILL_ME_IN);
   });
 
-  it("should use flatten to make nested arrays easy to work with", function() {
+  it("'flatten'を使って入れ子になった配列を簡単に扱えるようにすること", function() {
       expect(_([ [1, 2], [3, 4] ]).flatten()).toEqual(FILL_ME_IN);
   });
 
-  it("should use chain() ... .value() to use multiple higher order functions", function() {
+  it("'chain()'と'value()'を使って複数の高階関数を扱えるようになること", function() {
       var result = _([ [0, 1], 2 ]).chain()
                        .flatten()
                        .map(function(x) { return x+1 } )

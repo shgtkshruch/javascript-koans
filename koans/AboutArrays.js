@@ -1,9 +1,10 @@
-describe("About Arrays", function() {
+describe("配列", function() {
 
-  //We shall contemplate truth by testing reality, via spec expectations.  
-  it("should create arrays", function() {
+  //We shall contemplate truth by testing reality, via spec expectations.
+  //実在をテストすることで真実を熟考しましょう。
+  it("配列の生成", function() {
     var emptyArray = [];
-    expect(typeof(emptyArray)).toBe(FILL_ME_IN); //A mistake? - http:javascript.crockford.com/remedial.html
+    expect(typeof(emptyArray)).toBe(FILL_ME_IN); //誤り? - http:javascript.crockford.com/remedial.html
     expect(emptyArray.length).toBe(FILL_ME_IN);
 
     var multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
@@ -15,37 +16,37 @@ describe("About Arrays", function() {
     expect(multiTypeArray[5][0]).toBe(FILL_ME_IN);
   });
 
-  it("should understand array literals", function () {
+  it("配列リテラルへの理解", function () {
     var array = [];
     expect(array).toEqual([]);
-    
+
     array[0] = 1;
     expect(array).toEqual([1]);
-    
+
     array[1] = 2;
     expect(array).toEqual([1, FILL_ME_IN]);
-    
+
     array.push(3);
     expect(array).toEqual(FILL_ME_IN);
   });
 
-  it("should understand array length", function () {
+  it("配列のlengthへの理解", function () {
     var fourNumberArray = [1, 2, 3, 4];
 
     expect(fourNumberArray.length).toBe(FILL_ME_IN);
     fourNumberArray.push(5, 6);
     expect(fourNumberArray.length).toBe(FILL_ME_IN);
 
-    var tenEmptyElementArray = new Array(10); 
+    var tenEmptyElementArray = new Array(10);
     expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
 
     tenEmptyElementArray.length = 5;
     expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
   });
 
-  it("should slice arrays", function () {
+  it("配列をsliceする", function () {
     var array = ["peanut", "butter", "and", "jelly"];
-    
+
     expect(array.slice(0, 1)).toEqual(FILL_ME_IN);
     expect(array.slice(0, 2)).toEqual(FILL_ME_IN);
     expect(array.slice(2, 2)).toEqual(FILL_ME_IN);
@@ -55,7 +56,7 @@ describe("About Arrays", function() {
     expect(array.slice(5, 1)).toEqual(FILL_ME_IN);
   });
 
-  it("should know array references", function () {
+  it("配列を参照する", function () {
     var array = [ "zero", "one", "two", "three", "four", "five" ];
 
     function passedByReference(refArray) {
@@ -73,25 +74,25 @@ describe("About Arrays", function() {
     expect(array[3]).toBe(FILL_ME_IN);
   });
 
-  it("should push and pop", function () {
+  it("pushとpopをする", function () {
     var array = [1, 2];
     array.push(3);
 
     expect(array).toEqual(FILL_ME_IN);
-    
+
     var poppedValue = array.pop();
     expect(poppedValue).toBe(FILL_ME_IN);
     expect(array).toEqual(FILL_ME_IN);
   });
 
-  it("should know about shifting arrays", function () {
+  it("配列の転換について知る", function () {
     var array = [1, 2];
 
     array.unshift(3);
     expect(array).toEqual(FILL_ME_IN);
-    
+
     var shiftedValue = array.shift();
     expect(shiftedValue).toEqual(FILL_ME_IN);
     expect(array).toEqual(FILL_ME_IN);
-  });  
+  });
 });

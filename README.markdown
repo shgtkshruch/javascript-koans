@@ -1,34 +1,27 @@
-# Javascript Koans - koans to learn Javascript (the good bits) #
+# JavaScript Koans - JavaScriptを学ぶための公案 #
 
-Based on Edgecase's fantastic 
-[Ruby koans](http://github.com/edgecase/ruby_koans), the goal of the
-Javascript koans is to teach you Javascript programming through
-testing.
+訳注: 「公案」とは禅宗において修行者が悟りを開くための課題として与えられる問題のこと。(参照: [Wikipesia](http://ja.wikipedia.org/wiki/%E5%85%AC%E6%A1%88))
 
-When you first run the koans, you'll be presented with a runtime error and a
-stack trace indicating where the error occurred. Your goal is to make the
-error go away. As you fix each error, you should learn something about the
-Javascript language and functional programming in general.
+JavaScript KoansはEdgecaseによる[Ruby koans](http://github.com/edgecase/ruby_koans)をベースに、JavaScriptによるプログラミングをテストから教えることを目標にしています。
 
-Your journey towards Javascript enlightenment starts in the koans/AboutExpects.js file. These
-koans will be very simple, so don't overthink them! As you progress through
-more koans, more and more Javascript syntax will be introduced which will allow
-you to solve more complicated problems and use more advanced techniques.
+この公案を初めて実行すると、ランタイムエラーと、エラーがどこで発生したかを示すスタックトレースが提示されます。  
+ゴールはこのエラーを解決することです。各エラーを修正していく課程でJavaScriptについて、そしてUnderscore.jsを使った関数型JavaScriptに学ぶことができるはずです。
 
-### Running the Koans from a Browser
+JavaScriptの「悟り」を得るための旅路は`koans/AboutExpects.js`ファイルからスタートします。  
+公案はとてもシンプルなものなので、あまり考えすぎないように!
+公案を進めていけばいくほど、より多くのJavaScriptのシンタックスに出会っていきます。それらはより難しい問題を解決することと、より高度なテクニックを使えるようにサポートしてくれます。
 
-Simply navigate to the Javascript Koans folder using a file browser, and
-double click on KoansRunnner.html. 
+### 公案をブラウザで実行する
 
-Any browser will do, but for the best results Firefox or Chrome is
-recommended. More stack trace information shows up for javascript on these
-browsers.
+単純にJavaScript Koansのフォルダにファイルブラウザを使って移動し、そして`KoansRunnner.html`をダブルクリックしてください。
 
-The first error will be in koans/AboutExpects.js. Fix the first test and
-refresh the browser. Rinse and repeat until all tests turn green.
+どのブラウザでも動作しますあ、快適な環境としてFireFoxかChromeを推奨します。JavaScriptのより詳しいスタックトレースの情報がこれらのブラウザでは表示できます。
 
-The test runner used is [Jasmine](http://pivotal.github.com/jasmine/) with a
-customized report viewer.
+一番初めのエラーは`koans/AboutExpects.js`にあります。まずはこの一番初めのテストを修正し、ブラウザを更新してください。  
+すべてのテストがグリーン(訳注:
+テストがパスする)になるまで、繰り返して下さい。
+
+テストランナーには[Jasmine](http://pivotal.github.com/jasmine/)を利用し、レポートビューをカスタマイズしています。
 
 ### Changelog
 
@@ -46,4 +39,3 @@ customized report viewer.
 
 This software is (c) 2010 David Laing & Greg Malcolm, and licensed under the MIT license (see
 LICENCE for details).  Enjoy!
-
