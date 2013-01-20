@@ -23,6 +23,17 @@ JavaScriptの「悟り」を得るための旅路は`koans/AboutExpects.js`フ�
 
 テストランナーには[Jasmine](http://pivotal.github.com/jasmine/)を利用し、レポートビューをカスタマイズしています。
 
+### 公案をGrunt.jsを使って実行する(ja-koans-with-gruntブランチ)
+
+Grunt.js(0.4.x)を利用して、公案の実行を行えるようにしてあります。  
+JavaScript Koansディレクトリを`ja-koans-with-grunt`ブランチに切り替えて  
+`grunt`
+のコマンドを叩くと、
+コマンドラインにテスト結果を出力します。  
+コマンドライン側のテスト出力結果が順番通りではないので、  
+http://localhost:8000/KoansRunner.html  
+こちらからもアクセスできるようにしてあります。
+
 ### Changelog
 
 *  v3 - Nov 2010  - Moved out of branch of functional-koans project, into own top level project
