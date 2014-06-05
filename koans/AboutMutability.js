@@ -4,7 +4,7 @@ describe("変更できること", function() {
     var aPerson = {firstname: "John", lastname: "Smith" };
     aPerson.firstname = "Alan";
 
-    expect(aPerson.firstname).toBe(FILL_ME_IN);
+    expect(aPerson.firstname).toBe("Alan");
   });
 
   it("生成されたプロパティはパブリックであり変更できることへの理解", function () {
@@ -15,7 +15,7 @@ describe("変更できること", function() {
     var aPerson = new Person ("John", "Smith");
     aPerson.firstname = "Alan";
 
-    expect(aPerson.firstname).toBe(FILL_ME_IN);
+    expect(aPerson.firstname).toBe("Alan");
   });
 
   it("プロトタイプのプロパティはパブリックであり、変更できること", function () {
@@ -28,13 +28,13 @@ describe("変更できること", function() {
     };
 
     var aPerson = new Person ("John", "Smith");
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe("John Smith");
 
     aPerson.getFullName = function () {
       return this.lastname + ", " + this.firstname;
     };
 
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe("Smith, John");
   });
 
   it("コンストラクタの内部の変数、そしてコンストラクタの引数はプライベートであることへの理解", function () {
@@ -52,15 +52,15 @@ describe("変更できること", function() {
     aPerson.lastname = "Andrews";
     aPerson.fullName = "Penny Andrews";
 
-    expect(aPerson.getFirstName()).toBe(FILL_ME_IN);
-    expect(aPerson.getLastName()).toBe(FILL_ME_IN);
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFirstName()).toBe("John");
+    expect(aPerson.getLastName()).toBe("Smith");
+    expect(aPerson.getFullName()).toBe("John Smith");
 
     aPerson.getFullName = function () {
       return aPerson.lastname + ", " + aPerson.firstname;
     };
 
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe("Andrews, Penny");
   });
 
 });

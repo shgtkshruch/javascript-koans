@@ -6,7 +6,7 @@ describe("関数", function() {
       return a + b;
     }
 
-    expect(add(1, 2)).toBe(FILL_ME_IN);
+    expect(add(1, 2)).toBe(3);
   });
 
   it("内側の変数は外側の変数を上書きする", function () {
@@ -21,9 +21,9 @@ describe("関数", function() {
       return message;
     }
 
-    expect(getMessage()).toBe(FILL_ME_IN);
-    expect(overrideMessage()).toBe(FILL_ME_IN);
-    expect(message).toBe(FILL_ME_IN);
+    expect(getMessage()).toBe("Outer");
+    expect(overrideMessage()).toBe("Inner");
+    expect(message).toBe("Outer");
   });
 
   it("レキシカル・スコープがあること", function () {
@@ -35,7 +35,7 @@ describe("関数", function() {
       }
       return childfunction();
     }
-    expect(parentfunction()).toBe(FILL_ME_IN);
+    expect(parentfunction()).toBe("local");
   });
 
   it("レキシカル・スコープを使って関数を組み合わせること", function () {
@@ -50,7 +50,7 @@ describe("関数", function() {
     var mysteryFunction3 = makeMysteryFunction(3);
     var mysteryFunction5 = makeMysteryFunction(5);
 
-    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(FILL_ME_IN);
+    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(23);
   });
 
   it("余計な関数の引数を許すこと", function () {
@@ -59,13 +59,13 @@ describe("関数", function() {
       return firstArg;
     }
 
-    expect(returnFirstArg("first", "second", "third")).toBe(FILL_ME_IN);
+    expect(returnFirstArg("first", "second", "third")).toBe("first");
 
     function returnSecondArg(firstArg, secondArg) {
       return secondArg;
     }
 
-    expect(returnSecondArg("only give first arg")).toBe(FILL_ME_IN);
+    expect(returnSecondArg("only give first arg")).toBe(undefined);
 
     function returnAllArgs() {
       var argsArray = [];
@@ -75,7 +75,7 @@ describe("関数", function() {
       return argsArray.join(",");
     }
 
-    expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
+    expect(returnAllArgs("first", "second", "third")).toBe("first,second,third");
   });
 
   it("関数を値として渡すこと", function () {
@@ -89,21 +89,25 @@ describe("関数", function() {
     };
 
     var praiseSinger = { givePraise: appendRules };
-    expect(praiseSinger.givePraise("John")).toBe(FILL_ME_IN);
+    expect(praiseSinger.givePraise("John")).toBe("John rules!");
 
     praiseSinger.givePraise = appendDoubleRules;
-    expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
+    expect(praiseSinger.givePraise("Mary")).toBe("Mary totally rules!");
 
   });
 
   it("関数のボディを文字列として使うこと", function () {
     var add = new Function("a", "b", "return a + b;");
-    expect(add(1, 2)).toBe(FILL_ME_IN);
+    expect(add(1, 2)).toBe(3);
 
     var multiply = function (a, b) {
       //内部コメント
       return a * b;
     };
-    expect(multiply.toString()).toBe(FILL_ME_IN);
+    expect(multiply.toString()).toBe("
+      function (a, b) {
+        //内部コメント
+        return a * b;
+      }");
   });
 });

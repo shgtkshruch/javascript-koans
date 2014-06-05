@@ -32,7 +32,7 @@ describe("これまで学んだすべて", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("ナッツにアレルギーがあり、マッシュルームが嫌いな私が食べられるピザを見つけ出すこと (関数型)", function () {
@@ -40,8 +40,13 @@ describe("これまで学んだすべて", function() {
       var productsICanEat = [];
 
       /* solve using filter() & all() / any() */
+      productsICanEat.push(
+        _(products)
+          .filter(function (x) {return x.containsNuts === false})
+          .filter(function (x) {return _(x.ingredients).include("mushrooms") === true})
+        );
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
@@ -55,7 +60,7 @@ describe("これまで学んだすべて", function() {
       }
     }
 
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("1000以内の自然数の内3と5の公倍数になる数字をすべて加算する (関数型)", function () {
